@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#092c31"><title>Officer Registration — ResQGrid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{font-family:"DM Sans",sans-serif;color:#152d31;background:#f3f7f5;font-synthesis:none}*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;grid-template-columns:1fr 1fr}.intro{background:radial-gradient(ellipse at 15% 20%,#28534f 0,transparent 42%),linear-gradient(145deg,#092c31,#0e3d42 68%,#12645d);padding:clamp(32px,6vw,88px);color:#fff;display:flex;flex-direction:column;justify-content:space-between}.brand{font:800 20px Manrope,sans-serif;letter-spacing:-.5px}.brand b{color:#69dbc0}.brand-mark{width:38px;height:38px;object-fit:contain;border-radius:8px;background:#f6f3e5;flex:none}@media(max-width:480px){.brand-mark{width:32px;height:32px}}.intro h1{font:700 clamp(36px,4.5vw,64px)/1.05 Manrope,sans-serif;letter-spacing:-2px;max-width:580px;margin:0 0 20px}.intro p{color:#c5d9d5;line-height:1.7;max-width:480px}.note{font-size:13px;color:#a9c7c0}.form-side{display:grid;place-items:center;padding:38px 24px}.card{width:min(100%,480px);background:#fff;border:1px solid #e3ece8;border-radius:22px;padding:clamp(26px,4vw,44px);box-shadow:0 22px 65px #143d3610}.card h2{font:700 27px Manrope,sans-serif;margin:0 0 8px}.sub{color:#6b7d7a;font-size:14px;line-height:1.6;margin:0 0 25px}label{display:block;font-size:13px;font-weight:700;margin:15px 0 7px}input,select{width:100%;height:46px;border:1px solid #d7e2de;border-radius:9px;padding:0 12px;font:inherit;color:#193536;background:#fff}input:focus,select:focus{outline:3px solid #4cc4a22b;border-color:#36a98f}.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}.full{grid-column:1/-1}.consent{display:flex;gap:10px;align-items:flex-start;font-size:12px;line-height:1.5;color:#60736e;margin:19px 0}.consent input{width:16px;height:16px;margin:1px 0;flex:none}.submit{border:0;border-radius:9px;background:#087e70;color:white;width:100%;height:48px;font:700 14px inherit;cursor:pointer}.submit:hover{background:#066c60}.submit:disabled{opacity:.6;cursor:wait}.message{min-height:20px;font-size:13px;color:#a13f38;margin:12px 0 0}.signin{text-align:center;color:#687b76;font-size:13px;margin:18px 0 0}.signin a{color:#087e70;font-weight:700;text-decoration:none}@media(max-width:800px){body{grid-template-columns:1fr}.intro{min-height:260px;padding:28px}.intro h1{font-size:38px}.note{display:none}.form-side{padding:26px 16px}}
+  </style>
+</head>
+<body>
+  <aside class="intro"><a class="brand" href="index.html" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:10px"><img src="/resqgrid-mark.png" alt="ResQGrid" class="brand-mark">ResQ<b>Grid</b></a><div><h1>Coordinate response with confidence.</h1><p>Create an officer profile to access the ResQGrid operations, city monitoring, administration and reporting tools.</p></div><div class="note">ResQGrid local demonstration · dashboard data may be simulated</div></aside>
+  <main class="form-side"><section class="card"><h2>Officer registration</h2><p class="sub">Create your account details. Use your email or the generated ResQGrid ID to sign in later.</p>
+    <form id="signup" novalidate><div class="grid">
+      <div class="full"><label for="name">Full name</label><input id="name" name="name" autocomplete="name" required minlength="3" maxlength="100" placeholder="Your full name"></div>
+      <div><label for="email">Work email</label><input id="email" type="email" autocomplete="email" required placeholder="name@agency.gov.in"></div>
+      <div><label for="mobile">Phone number</label><input id="mobile" type="tel" inputmode="numeric" autocomplete="tel" placeholder="10 digit number"></div>
+      <div><label for="role">Department / role</label><select id="role" required><option value="" selected disabled>Select role</option><option>Emergency Management</option><option>Electricity Department</option><option>City Administration</option><option>Health Services</option><option>Rescue Coordination</option><option>Other Officer</option></select></div>
+      <div><label for="state">State / Union Territory</label><input id="state" required placeholder="State or UT"></div>
+      <div class="full"><label for="password">Password</label><input id="password" type="password" autocomplete="new-password" required minlength="8" maxlength="128" placeholder="At least 8 characters"></div>
+      <div class="full"><label for="confirm">Confirm password</label><input id="confirm" type="password" autocomplete="new-password" required minlength="8" maxlength="128" placeholder="Enter the password again"></div>
+    </div><label class="consent"><input id="consent" type="checkbox" required><span>I confirm these details are accurate and understand this is a local demonstration account.</span></label>
+    <button class="submit" id="submit" type="submit">Create officer account</button><p class="message" id="message" role="status" aria-live="polite"></p></form>
+    <p class="signin">Already registered? <a href="login.html">Return to officer sign in</a></p>
+  </section></main>
+  <script>
+    const form=document.getElementById('signup'),message=document.getElementById('message'),button=document.getElementById('submit');
+    form.addEventListener('submit',async event=>{event.preventDefault();message.textContent='';
+      if(!form.reportValidity())return;if(document.getElementById('password').value!==document.getElementById('confirm').value){message.textContent='The passwords do not match.';return;}
+      button.disabled=true;button.textContent='Creating account…';
+      try{const response=await fetch('http://127.0.0.1:5177/api/auth/signup',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fullName:document.getElementById('name').value,email:document.getElementById('email').value,mobile:document.getElementById('mobile').value,password:document.getElementById('password').value,portal:'government',acceptedTerms:true,role:'Government Officer · '+document.getElementById('role').value,state:document.getElementById('state').value})});const data=await response.json();if(!response.ok)throw new Error(data.error||'Registration failed.');message.style.color='#087e70';message.textContent=`Account created. Your ResQGrid ID is ${data.user.userId}. Redirecting to sign in…`;form.reset();setTimeout(()=>location.href='login.html',2200);}catch(error){message.style.color='#a13f38';message.textContent=error.message||'Could not create your account. Try again.';button.disabled=false;button.textContent='Create officer account';}
+    });
+  </script><script src="/chat-widget.js"></script>
+</body>
+</html>

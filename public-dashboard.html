@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ResQGrid – Public Electricity &amp; Emergency Information Portal</title>
+<meta name="description" content="ResQGrid public portal: check electricity status in your area, emergency announcements, register and track complaints, and safety information during disasters.">
+<link rel="icon" type="image/png" href="data:image/jpeg;base64,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">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+<style>
+#session-check{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;background:#f4f7fa;color:#17324b;font:600 15px system-ui,sans-serif}body:not(.session-verified)>:not(#session-check){visibility:hidden}body.session-error #session-check{color:#8b2e2e}
+</style>
+</head>
+<body>
+<div id="session-check" role="status" aria-live="polite">Verifying your ResQGrid session…</div>
+<!-- Government identity strip -->
+<div class="gov-strip">
+  <div class="container">
+    <div><b>ResQGrid</b> | Public Electricity &amp; Disaster Information Service</div>
+    <div>Emergency: <b>112</b> &nbsp;•&nbsp; Electricity Helpline: <b>1912</b> &nbsp;•&nbsp; Disaster Management: <b>1070 / 1077</b></div>
+  </div>
+</div>
+
+<!-- Active emergency banner (shown only when critical/high alerts exist) -->
+<div id="emergencyBanner" class="alert-strip hidden" role="alert">
+  <div class="container">
+    <span class="pulse-dot"></span>
+    <span id="emergencyBannerText">Active emergency alert in effect.</span>
+    <a href="#alerts" data-nav="alerts">View official announcements →</a>
+  </div>
+</div>
+
+<!-- Navigation -->
+<header class="navbar">
+  <div class="nav-inner">
+    <a class="brand" href="#home" data-nav="home" aria-label="ResQGrid — Public Electricity Information Portal, home">
+      <img class="logo-img" src="data:image/jpeg;base64,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" alt="ResQGrid logo">
+    </a>
+    <button class="nav-burger" id="navBurger" aria-label="Toggle menu">☰</button>
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <a href="#home" data-nav="home">Home</a>
+      <a href="#status" data-nav="status">Electricity Status</a>
+      <a href="#alerts" data-nav="alerts">Emergency Alerts</a>
+      <a href="#complaint" data-nav="complaint">Register Complaint</a>
+      <a href="#safety" data-nav="safety">Safety Information</a>
+      <a href="#" id="openChatNav">AI Assistant</a>
+      <select id="langSelect" class="lang-select" aria-label="Language selector">
+        <option value="English">English</option>
+        <option value="हिन्दी">हिन्दी (Hindi)</option>
+        <option value="বাংলা">বাংলা (Bengali)</option>
+        <option value="தமிழ்">தமிழ் (Tamil)</option>
+        <option value="తెలుగు">తెలుగు (Telugu)</option>
+        <option value="मराठी">मराठी (Marathi)</option>
+        <option value="ગુજરાતી">ગુજરાતી (Gujarati)</option>
+        <option value="ಕನ್ನಡ">ಕನ್ನಡ (Kannada)</option>
+        <option value="മലയാളം">മലയാളം (Malayalam)</option>
+        <option value="ਪੰਜਾਬੀ">ਪੰਜਾਬੀ (Punjabi)</option>
+        <option value="ଓଡ଼ିଆ">ଓଡ଼ିଆ (Odia)</option>
+        <option value="অসমীয়া">অসমীয়া (Assamese)</option>
+      </select>
+    <a href="#" id="signOutLink" role="button">Sign out</a></nav>
+  </div>
+</header>
+
+<main id="app">
+
+<!-- ============ HOME ============ -->
+<section id="page-home" class="page">
+  <div class="hero">
+    <div class="container">
+      <span class="demo-badge" title="All figures on this portal are demonstration data">⚠ Demo data — not live</span>
+      <h1>Powering Communities. Protecting Lives.</h1>
+      <p>Check public electricity and emergency information. ResQGrid demonstrates department agents comparing demand with available supply, securing essential needs by criticality, then negotiating remaining MW by unmet-demand urgency. All figures and negotiations shown here are simulated; officers review allocations.</p>
+      <a href="#status" class="btn btn-saffron" data-nav="status">⚡ Check Power Status</a>
+      &nbsp;
+      <a href="#complaint" class="btn btn-outline" data-nav="complaint">📋 Report an Issue</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="metrics" id="metricCards" aria-live="polite">
+      <div class="metric">
+        <div class="m-label">Total Available Electricity <span class="demo-badge">Demo</span></div>
+        <div class="m-value" id="mTotal">—</div>
+        <div class="m-sub">Megawatts (MW), demonstration figure</div>
+      </div>
+      <div class="metric warn">
+        <div class="m-label">Current Electricity Demand <span class="demo-badge">Demo</span></div>
+        <div class="m-value" id="mDemand">—</div>
+        <div class="m-sub">Megawatts (MW), demonstration figure</div>
+      </div>
+      <div class="metric danger">
+        <div class="m-label">Areas With Power Outages <span class="demo-badge">Demo</span></div>
+        <div class="m-value" id="mOutages">—</div>
+        <div class="m-sub">Localities currently without supply</div>
+      </div>
+      <div class="metric danger">
+        <div class="m-label">Active Emergency Alerts <span class="demo-badge">Demo</span></div>
+        <div class="m-value" id="mAlerts">—</div>
+        <div class="m-sub">Critical &amp; high-priority announcements</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container section">
+    <div class="section-head">
+      <div>
+        <h2>Latest public announcements</h2>
+        <div class="sub">Verified information from the emergency operations centre.</div>
+      </div>
+      <a href="#alerts" class="btn btn-ghost" data-nav="alerts">All announcements</a>
+    </div>
+    <div id="homeAnnouncements"></div>
+  </div>
+
+  <div class="container section">
+    <div class="section-head">
+      <div>
+        <h2>How ResQGrid helps you</h2>
+        <div class="sub">Free public services during normal times and disasters.</div>
+      </div>
+    </div>
+    <div class="safety-grid">
+      <div class="safety-card"><h3><span class="ico">🗺️</span> Area electricity map</h3><p style="font-size:.93rem">See green, yellow and red indicators for every locality, search by name and check verified restoration times when available.</p></div>
+      <div class="safety-card"><h3><span class="ico">📣</span> Emergency announcements</h3><p style="font-size:.93rem">Cyclone and flood warnings, planned interruptions and restoration updates — each with affected locations and instructions for citizens.</p></div>
+      <div class="safety-card"><h3><span class="ico">📝</span> Complaint registration &amp; tracking</h3><p style="font-size:.93rem">Report outages, fallen poles or exposed wires in under two minutes. Track progress with your reference number — no account needed.</p></div>
+      <div class="safety-card"><h3><span class="ico">🤖</span> AI public assistant</h3><p style="font-size:.93rem">Ask questions in 12 Indian languages. The assistant answers only from verified portal data and never invents restoration times.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ELECTRICITY STATUS ============ -->
+<section id="page-status" class="page hidden">
+  <div class="container section">
+    <div class="section-head">
+      <div>
+        <h2>Area-wise Electricity Status</h2>
+        <div class="sub">Click any marker or table row for details. Indicators: <i style="display:inline-block;width:11px;height:11px;border-radius:50%;background:#1e7e34"></i> Available &nbsp;<i style="display:inline-block;width:11px;height:11px;border-radius:50%;background:#e67e22"></i> Unstable &nbsp;<i style="display:inline-block;width:11px;height:11px;border-radius:50%;background:#c0392b"></i> Outage</div>
+      </div>
+      <span class="demo-badge">⚠ Demo data — not live</span>
+    </div>
+    <div class="map-wrap">
+      <div id="map" aria-label="Interactive map of electricity status by area"></div>
+      <aside class="map-side">
+        <div class="search-box">
+          <input type="search" id="areaSearch" placeholder="Search city, district or locality… e.g. Adyar" aria-label="Search area">
+        </div>
+        <div class="area-panel" id="areaPanel">
+          <h3>Select an area</h3>
+          <p style="color:var(--muted)">Click a map marker, or search for your locality, to see its current electricity condition, estimated restoration time (when verified) and last updated timestamp.</p>
+        </div>
+        <div class="legend">
+          <span><i style="background:#1e7e34"></i>Electricity Available</span>
+          <span><i style="background:#e67e22"></i>Supply Unstable</span>
+          <span><i style="background:#c0392b"></i>Power Outage</span>
+        </div>
+      </aside>
+    </div>
+
+    <div class="section" style="overflow-x:auto">
+      <table class="areas-table" id="areasTable" aria-label="All areas and their electricity status">
+        <thead><tr><th>Area</th><th>District</th><th>Status</th><th>Availability</th><th>Estimated restoration</th><th>Last updated</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EMERGENCY ALERTS ============ -->
+<section id="page-alerts" class="page hidden">
+  <div class="container section">
+    <div class="section-head">
+      <div>
+        <h2>Emergency Announcements</h2>
+        <div class="sub">Official, verified announcements. Priority: 🔴 Critical · 🟠 High · 🟡 Medium · 🔵 Information.</div>
+      </div>
+      <span class="demo-badge">⚠ Demo data — not live</span>
+    </div>
+    <div id="announcementsList"></div>
+  </div>
+</section>
+
+<!-- ============ COMPLAINTS ============ -->
+<section id="page-complaint" class="page hidden">
+  <div class="container section">
+    <div class="section-head">
+      <div>
+        <h2>Register a Complaint</h2>
+        <div class="sub">Report electricity problems. Your personal details are never displayed publicly and are used only to update you.</div>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <div class="form-msg" id="cMsg" role="alert"></div>
+      <form id="complaintForm" novalidate>
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="cName">Full name <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+            <input id="cName" type="text" maxlength="80" autocomplete="name" placeholder="e.g. Priya Sharma">
+          </div>
+          <div class="form-field">
+            <label for="cContact">Mobile or email <span>*</span></label>
+            <input id="cContact" type="text" autocomplete="email" placeholder="10-digit mobile or email">
+            <span class="err" id="eContact"></span>
+          </div>
+          <div class="form-field">
+            <label for="cDistrict">District <span>*</span></label>
+            <select id="cDistrict">
+              <option value="">— Select district —</option>
+              <option>Chennai</option><option>Chengalpattu</option><option>Tiruvallur</option><option>Kanchipuram</option>
+            </select>
+            <span class="err" id="eDistrict"></span>
+          </div>
+          <div class="form-field">
+            <label for="cLocality">Locality / area <span>*</span></label>
+            <input id="cLocality" type="text" maxlength="120" placeholder="e.g. Thiruvanmiyur">
+            <span class="err" id="eLocality"></span>
+          </div>
+          <div class="form-field full">
+            <label for="cCategory">Complaint category <span>*</span></label>
+            <select id="cCategory">
+              <option value="">— Select category —</option>
+              <option>Power outage</option>
+              <option>Damaged electricity infrastructure</option>
+              <option>Fallen electric poles</option>
+              <option>Exposed electrical wires</option>
+              <option>Other electricity-related issues</option>
+            </select>
+            <span class="err" id="eCategory"></span>
+          </div>
+          <div class="form-field full">
+            <label for="cDesc">Description <span>*</span></label>
+            <textarea id="cDesc" rows="4" maxlength="2000" placeholder="Describe the problem: what happened, since when, any landmarks…"></textarea>
+            <span class="hint">Minimum 10 characters. Do not include personal information in the description.</span>
+            <span class="err" id="eDesc"></span>
+          </div>
+          <div class="form-field">
+            <label for="cLocation">Location / landmark <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+            <input id="cLocation" type="text" maxlength="200" placeholder="e.g. Near Adyar bus depot, 3rd cross street">
+          </div>
+          <div class="form-field">
+            <label for="cImage">Photo (optional, JPG/PNG/WebP, max 5 MB)</label>
+            <input id="cImage" type="file" accept="image/jpeg,image/png,image/webp">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-blue" id="cSubmit" style="width:100%;font-size:1rem">Submit complaint</button>
+        <p class="hint" style="margin-top:10px;color:var(--muted)">For life-threatening electrical emergencies, call <b>112</b> (national emergency) or <b>1912</b> (electricity helpline) immediately.</p>
+      </form>
+    </div>
+
+    <div class="track-card">
+      <h3 style="color:var(--blue-900);margin-bottom:8px">Track your complaint</h3>
+      <p style="font-size:.9rem;color:var(--muted);margin-bottom:12px">Enter the reference number you received (e.g. <b>RG261114AB12CD</b>). For privacy, tracking shows status only — never your personal details.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <input id="trackRef" type="text" placeholder="RG-XXXXXXXXXX" style="flex:1;min-width:220px;padding:11px 13px;border:1.5px solid var(--line);border-radius:8px;text-transform:uppercase">
+        <button class="btn btn-blue" id="trackBtn">Track</button>
+      </div>
+      <span class="err" id="trackErr" style="display:block;margin-top:6px"></span>
+      <div id="trackResult"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SAFETY ============ -->
+<section id="page-safety" class="page hidden">
+  <div class="container section">
+    <div class="section-head">
+      <div>
+        <h2>Public Safety Information</h2>
+        <div class="sub">Simple, verified guidance. Share it with family and neighbours.</div>
+      </div>
+    </div>
+    <div class="safety-grid" id="safetyGrid"></div>
+
+    <div class="section-head" style="margin-top:34px">
+      <div>
+        <h2>Verified emergency contact numbers</h2>
+        <div class="sub">Government of India official helplines.</div>
+      </div>
+    </div>
+    <div class="helpline-grid" id="helplineGrid"></div>
+
+    <div class="section-head" style="margin-top:34px">
+      <div>
+        <h2>Official government resources</h2>
+      </div>
+    </div>
+    <div class="helpline-grid">
+      <div class="helpline"><span>National Disaster Management Authority (NDMA)</span><a href="https://ndma.gov.in/" target="_blank" rel="noopener" class="btn btn-ghost" style="padding:8px 14px">ndma.gov.in</a></div>
+      <div class="helpline"><span>India Meteorological Department (IMD) – weather &amp; cyclone warnings</span><a href="https://mausam.imd.gov.in/" target="_blank" rel="noopener" class="btn btn-ghost" style="padding:8px 14px">mausam.imd.gov.in</a></div>
+      <div class="helpline"><span>National Disaster Response Force (NDRF)</span><a href="https://ndrf.gov.in/" target="_blank" rel="noopener" class="btn btn-ghost" style="padding:8px 14px">ndrf.gov.in</a></div>
+      <div class="helpline"><span>National Portal of India – helpline directory</span><a href="https://www.india.gov.in/directory/helpline" target="_blank" rel="noopener" class="btn btn-ghost" style="padding:8px 14px">india.gov.in</a></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<div class="flag-bar" aria-hidden="true"></div>
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <h4>About ResQGrid</h4>
+        <p style="font-size:.86rem">ResQGrid is an intelligent disaster management and electricity resource allocation platform. This public portal keeps citizens informed about power availability, emergency announcements and safety guidance — free, without login.</p>
+        <p style="margin-top:10px" class="demo-badge">⚠ Demo build — all data shown is demonstration data</p>
+      </div>
+      <div>
+        <h4>Public Services</h4>
+        <ul>
+          <li><a href="#status" data-nav="status">Electricity Status</a></li>
+          <li><a href="#complaint" data-nav="complaint">Register Complaint</a></li>
+          <li><a href="#complaint" data-nav="complaint">Track Complaint</a></li>
+          <li><a href="#safety" data-nav="safety">Safety Information</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Emergency Information</h4>
+        <ul>
+          <li><a href="#alerts" data-nav="alerts">Emergency Alerts</a></li>
+          <li><a href="https://ndma.gov.in/" target="_blank" rel="noopener">NDMA</a></li>
+          <li><a href="https://mausam.imd.gov.in/" target="_blank" rel="noopener">IMD Weather</a></li>
+          <li><a href="https://www.ndrf.gov.in/" target="_blank" rel="noopener">NDRF</a></li>
+          <li><a href="https://www.india.gov.in/directory/helpline" target="_blank" rel="noopener">Govt. Helpline Directory</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact &amp; Legal</h4>
+        <ul>
+          <li>☎ Emergency: <b style="color:#fff">112</b> · Electricity: <b style="color:#fff">1912</b> · Disaster: <b style="color:#fff">1070 / 1077</b></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Accessibility Statement</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 ResQGrid Public Portal · A demonstration public-information service</span>
+      <span>Inspired by Government of India digital design standards · GIGW-aligned</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>window.__BAKED = { summary: {"ok":true,"demo":true,"updated_at":"2026-11-14T17:44:46.126Z","total_available_mw":2847,"current_demand_mw":3120,"grid_health_pct":70,"outage_areas":5,"unstable_areas":6,"total_areas":24,"active_alerts":2}, areas: {"ok":true,"demo":true,"updated_at":"2026-11-14T17:44:46.129Z","areas":[{"id":1,"name":"Adyar","district":"Chennai","lat":13.0012,"lng":80.2565,"status":"outage","availability_pct":0,"outage_since":"2026-11-14T08:34:49.607Z","estimated_restore":"2026-11-14T20:34:49.607Z","notes":"Flood-water ingress at Adyar substation. Crews on site.","last_updated":"2026-11-14T17:24:49.607Z"},{"id":20,"name":"Ambattur","district":"Chennai","lat":13.1143,"lng":80.1548,"status":"available","availability_pct":100,"outage_since":null,"estimated_restore":null,"notes":null,"last_updated":"2026-11-14T17:24:49.608Z"},{"id":8,"name":"Anna Nagar","district":"Chennai","lat":13.0878,"lng":80.2107,"status":"available","availability_pct":100,"outage_since":null,"estimated_restore":null,"notes":null,"last_updated":"2026-11-14T17:24:49.607Z"},{"id":19,"name":"Avadi","district":"Tiruvallur","lat":13.1147,"lng":80.1073,"status":"available","availability_pct":100,"outage_since":null,"estimated_restore":null,"notes":null,"last_updated":"2026-11-14T17:24:49.608Z"},{"id":12,"name":"Besant Nagar","district":"Chennai","lat":13.0002,"lng":80.2668,"status":"unstable","availability_pct":50,"outage_since":null,"estimated_restore":null,"notes":"Coastal feeder under watch.","last_updated":"2026-11-14T17:24:49.608Z"},{"id":21,"name":"Chromepet","district":"Chengalpattu","lat":12.9516,"lng":80.1462,"status":"unstable","availability_pct":75,"outage_since":null,"estimated_restore":null,"notes":"Rotational one-hour cuts possible.","last_updated":"2026-11-14T17:24:49.608Z"},{"id":13,"name":"Egmore","district":"Chennai","lat":13.0732,"lng":80.2609,"status":"available","availability_pct":100,"outage_since":null,"estimated_restore":null,"notes":null,"last_updated":"2026-11-14T17:24:49.608Z"},{"id":9,"name":"Guindy","district":"Chennai","lat":13.0067,"lng":80.2206,"status":"available","availability_pct":98,"outage_since":null,"estimated_restore":null,"notes":"Industrial feeder at normal load.","last_updated":"2026-11-14T17:24:49.607Z"},{"id":24,"name":"Injambakkam","district":"Chennai","lat":12.9355,"lng":80.2558,"status":"outage","availability_pct":0,"outage_since":"2026-11-14T13:14:49.607Z","estimated_restore":"2026-11-14T20:04:49.607Z","notes":"Fallen pole on ECR service road - repair crew assigned.","last_updated":"2026-11-14T17:24:49.608Z"},{"id":15,"name":"Kodambakkam","district":"Chennai","lat":13.0512,"lng":80.2236,"status":"available","availability_pct":100,"outage_since":null,"estimated_restore":null,"notes":null,"last_updated":"2026-11-14T17:24:49.608Z"},{"id":17,"name":"Manali","district":"Chennai","lat":13.1712,"lng":80.3189,"status":"available","availability_pct":100,"outage_since":null,"estimated_restore":null,"notes":null,"last_updated":"2026-11-14T17:24:49.608Z"},{"id":7,"name":"Mylapore","district":"Chennai","lat":13.0339,"lng":80.2686,"status":"available","availability_pct":100,"outage_since":null,"estimated_restore":null,"notes":null,"last_updated":"2026-11-14T17:24:49.607Z"},{"id":22,"name":"Pallavaram","district":"Chengalpattu","lat":12.9675,"lng":80.1491,"status":"available","availability_pct":100,"outage_since":null,"estimated_restore":null,"notes":null,"last_updated":"2026-11-14T17:24:49.608Z"},{"id":11,"name":"Pallikaranai","district":"Chennai","lat":12.9331,"lng":80.2094,"status":"outage","availability_pct":0,"outage_since":"2026-11-14T12:34:49.607Z","estimated_restore":null,"notes":"No verified restoration time yet. Assessment under way.","last_updated":"2026-11-14T17:24:49.608Z"},{"id":4,"name":"Perungudi","district":"Chennai","lat":12.9698,"lng":80.2476,"status":"unstable","availability_pct":55,"outage_since":null,"estimated_restore":null,"notes":"Intermittent supply; load-shedding rotation active.","last_updated":"2026-11-14T17:24:49.607Z"},{"id":18,"name":"Poonamallee","district":"Tiruvallur","lat":13.0475,"lng":80.0967,"status":"available","availability_pct":100,"outage_since":null,"estimated_restore":null,"notes":null,"last_updated":"2026-11-14T17:24:49.608Z"},{"id":14,"name":"Purasaiwakkam","district":"Chennai","lat":13.0905,"lng":80.2405,"status":"available","availability_pct":100,"outage_since":null,"estimated_restore":null,"notes":null,"last_updated":"2026-11-14T17:24:49.608Z"},{"id":23,"name":"Purasawalkam","district":"Chennai","lat":13.0827,"lng":80.2437,"status":"available","availability_pct":100,"outage_since":null,"estimated_restore":null,"notes":null,"last_updated":"2026-11-14T17:24:49.608Z"},{"id":5,"name":"Sholinganallur","district":"Chennai","lat":12.901,"lng":80.2279,"status":"unstable","availability_pct":60,"outage_since":null,"estimated_restore":null,"notes":"Voltage fluctuations reported.","last_updated":"2026-11-14T17:24:49.607Z"},{"id":6,"name":"T. Nagar","district":"Chennai","lat":13.0418,"lng":80.2341,"status":"unstable","availability_pct":70,"outage_since":null,"estimated_restore":null,"notes":"Scheduled maintenance in progress.","last_updated":"2026-11-14T17:24:49.607Z"},{"id":10,"name":"Tambaram","district":"Chengalpattu","lat":12.9249,"lng":80.1,"status":"available","availability_pct":100,"outage_since":null,"estimated_restore":null,"notes":null,"last_updated":"2026-11-14T17:24:49.608Z"},{"id":2,"name":"Thiruvanmiyur","district":"Chennai","lat":12.9829,"lng":80.2594,"status":"outage","availability_pct":0,"outage_since":"2026-11-14T09:34:49.607Z","estimated_restore":"2026-11-14T21:34:49.607Z","notes":"Feeder 12 tripped due to water logging.","last_updated":"2026-11-14T17:24:49.607Z"},{"id":16,"name":"Thiruvottriyur","district":"Chennai","lat":13.1686,"lng":80.3003,"status":"unstable","availability_pct":65,"outage_since":null,"estimated_restore":null,"notes":"North Chennai corridor under monitoring.","last_updated":"2026-11-14T17:24:49.608Z"},{"id":3,"name":"Velachery","district":"Chennai","lat":12.9791,"lng":80.2207,"status":"outage","availability_pct":0,"outage_since":"2026-11-14T10:34:49.607Z","estimated_restore":"2026-11-14T22:34:49.607Z","notes":"Low-lying transformer flooded.","last_updated":"2026-11-14T17:24:49.607Z"}]}, announcements: {"ok":true,"demo":true,"updated_at":"2026-11-14T17:44:46.130Z","announcements":[{"id":1,"priority":"critical","category":"Cyclone Alert","title":"Cyclone VARUNI (DEMO) - Landfall expected tonight near Chennai coast","body":"Meteorological modelling (DEMO SCENARIO) indicates a severe cyclonic storm approaching the Chennai coast. Wind speeds of 90-110 km/h and very heavy rainfall are expected. Power supply to low-lying and coastal areas may be pre-emptively shut to prevent electrocution.","affected_locations":"Adyar, Thiruvanmiyur, Besant Nagar, Velachery, Perungudi, Injambakkam, Sholinganallur","instructions":"1) Stay indoors and away from windows. 2) Do not touch fallen wires or electric poles. 3) Keep mobile phones fully charged. 4) Store drinking water and dry food for 72 hours. 5) Follow instructions from local authorities only.","published_at":"2026-11-14T16:04:49.608Z","source":"ResQGrid Emergency Operations (DEMO DATA)"},{"id":2,"priority":"high","category":"Flood Warning","title":"Flood alert: Adyar basin water levels rising (DEMO)","body":"Water levels in the Adyar river basin (DEMO SCENARIO) are rising due to continuous rainfall. Electricity supply in flood-affected streets has been suspended as a safety measure. Do not attempt to wade through flooded streets near electrical installations.","affected_locations":"Adyar, Thiruvanmiyur, Velachery, Pallikaranai","instructions":"1) Report submerged transformers or sparking poles immediately on 1912. 2) Switch off mains if water enters your premises. 3) Move electrical appliances to height.","published_at":"2026-11-14T13:34:49.608Z","source":"ResQGrid Emergency Operations (DEMO DATA)"},{"id":3,"priority":"medium","category":"Scheduled Interruption","title":"Scheduled maintenance interruption - T. Nagar zone (DEMO)","body":"Planned maintenance on the 110/33 kV substation (DEMO SCENARIO) will cause a planned interruption between 09:00 and 13:00 on 16 November. Supply will be restored progressively.","affected_locations":"T. Nagar, Kodambakkam, parts of Saidapet","instructions":"No action needed. Elevator-dependent residents should plan ahead. Hospitals on the affected grid have priority backup.","published_at":"2026-11-14T07:34:49.608Z","source":"ResQGrid Grid Operations (DEMO DATA)"},{"id":4,"priority":"info","category":"Restoration Update","title":"Emergency restoration teams deployed to northern corridors (DEMO)","body":"Twenty additional restoration crews (DEMO SCENARIO) have been deployed with portable generators positioned at relief shelters in Thiruvottriyur and Manali. Restoration progress is being updated every hour on this portal.","affected_locations":"Thiruvottriyur, Manali, Perungudi, Sholinganallur","instructions":"Relief shelters with generator backup are listed on the Safety Information page.","published_at":"2026-11-14T16:49:49.608Z","source":"ResQGrid Field Operations (DEMO DATA)"}]} };</script><style>/* ResQGrid Public Portal - Government-style styling */
+:root{
+  --blue-900:#0b2545; --blue-800:#123262; --blue-700:#1b4b8f; --blue-600:#2159a8;
+  --blue-100:#e7effa; --blue-50:#f4f8fd;
+  --saffron:#ff8c1a; --green-600:#1e7e34; --green-50:#eaf6ec;
+  --amber-600:#a8620a; --amber-50:#fdf3e2;
+  --red-600:#c0392b; --red-700:#a93226; --red-50:#fdecea;
+  --ink:#1c2733; --muted:#5a6b7b; --line:#d9e2ec; --bg:#f4f6f9; --card:#ffffff;
+  --radius:10px; --shadow:0 1px 3px rgba(16,42,67,.10),0 4px 14px rgba(16,42,67,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Segoe UI",system-ui,-apple-system,Roboto,"Noto Sans",sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;font-size:16px}
+img{max-width:100%}
+a{color:var(--blue-600)}
+.container{max-width:1180px;margin:0 auto;padding:0 18px}
+
+/* ---------- top strips ---------- */
+.gov-strip{background:var(--blue-900);color:#dbe7f5;font-size:.78rem;padding:5px 0}
+.gov-strip .container{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.gov-strip b{color:#fff}
+.alert-strip{background:linear-gradient(90deg,var(--red-700),#d64541);color:#fff;font-weight:600;font-size:.9rem}
+.alert-strip a{color:#ffe9a8;font-weight:700}
+.alert-strip .container{display:flex;align-items:center;gap:10px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap}
+.pulse-dot{width:11px;height:11px;border-radius:50%;background:#ffe9a8;box-shadow:0 0 0 rgba(255,233,168,.7);animation:pulse 1.6s infinite;flex:none}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,233,168,.7)}70%{box-shadow:0 0 0 9px rgba(255,233,168,0)}100%{box-shadow:0 0 0 0 rgba(255,233,168,0)}}
+
+/* ---------- navbar ---------- */
+.navbar{background:var(--card);border-bottom:3px solid var(--saffron);position:sticky;top:0;z-index:1200;box-shadow:0 1px 8px rgba(11,37,69,.12)}
+.nav-inner{display:flex;align-items:center;gap:14px;padding:10px 18px;max-width:1180px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--blue-900)}
+.brand .logo-img{height:48px;width:auto;display:block}
+.brand .logo{width:42px;height:42px;flex:none}
+.brand-text b{font-size:1.18rem;letter-spacing:.3px;display:block;line-height:1.1}
+.brand-text span{font-size:.7rem;color:var(--muted);letter-spacing:.4px}
+.nav-links{display:flex;gap:4px;margin-left:auto;align-items:center;flex-wrap:wrap}
+.nav-links a{padding:9px 13px;border-radius:8px;text-decoration:none;color:var(--blue-800);font-weight:600;font-size:.92rem}
+.nav-links a:hover{background:var(--blue-100)}
+.nav-links a.active{background:var(--blue-700);color:#fff}
+.lang-select{border:1.5px solid var(--line);border-radius:8px;padding:8px 10px;font-size:.9rem;color:var(--blue-800);background:#fff;font-weight:600}
+.nav-burger{display:none;background:none;border:1.5px solid var(--line);border-radius:8px;font-size:1.25rem;padding:6px 12px;cursor:pointer;color:var(--blue-800)}
+
+/* ---------- hero ---------- */
+.hero{background:linear-gradient(115deg,var(--blue-900) 0%,var(--blue-700) 62%,#2c6cc0 100%);color:#fff;padding:54px 0 46px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-140px;top:-140px;width:460px;height:460px;border-radius:50%;background:rgba(255,255,255,.06)}
+.hero::before{content:"";position:absolute;right:60px;bottom:-220px;width:340px;height:340px;border-radius:50%;background:rgba(255,140,26,.14)}
+.hero .container{position:relative;z-index:1}
+.hero h1{font-size:clamp(1.7rem,3.6vw,2.6rem);letter-spacing:.3px;max-width:640px}
+.hero p{margin:14px 0 24px;max-width:560px;color:#e3edf9;font-size:1.02rem}
+.btn{display:inline-block;border:none;border-radius:8px;padding:12px 22px;font-weight:700;font-size:.95rem;cursor:pointer;text-decoration:none;transition:.15s}
+.btn-saffron{background:var(--saffron);color:#3a2000}
+.btn-saffron:hover{background:#ff9d3d}
+.btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.65)}
+.btn-outline:hover{background:rgba(255,255,255,.14)}
+.btn-blue{background:var(--blue-700);color:#fff}
+.btn-blue:hover{background:var(--blue-800)}
+.btn-ghost{background:var(--blue-100);color:var(--blue-700)}
+.btn-ghost:hover{background:#d7e6f7}
+.demo-badge{display:inline-flex;align-items:center;gap:6px;background:#fff4e0;color:#8a5a00;border:1px solid #f0cf8f;font-size:.72rem;font-weight:700;border-radius:999px;padding:3px 10px;letter-spacing:.4px;text-transform:uppercase}
+
+/* ---------- metric cards ---------- */
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:-34px auto 30px;position:relative;z-index:2}
+.metric{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px;border-top:4px solid var(--blue-600)}
+.metric.warn{border-top-color:var(--saffron)}
+.metric.danger{border-top-color:var(--red-600)}
+.metric .m-label{display:flex;justify-content:space-between;align-items:center;font-size:.82rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;gap:6px}
+.metric .m-value{font-size:1.9rem;font-weight:800;color:var(--blue-900);margin-top:6px;line-height:1.15}
+.metric .m-sub{font-size:.8rem;color:var(--muted)}
+
+/* ---------- sections ---------- */
+.section{padding:34px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:18px;flex-wrap:wrap}
+.section-head h2{color:var(--blue-900);font-size:1.45rem}
+.section-head .sub{color:var(--muted);font-size:.92rem}
+.updated{font-size:.78rem;color:var(--muted)}
+
+/* ---------- map ---------- */
+.map-wrap{display:grid;grid-template-columns:1fr 330px;gap:16px}
+#map{height:520px;border-radius:var(--radius);box-shadow:var(--shadow);z-index:5;background:#dfe9f3}
+.map-side{display:flex;flex-direction:column;gap:12px}
+.search-box input{width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:8px;font-size:.95rem}
+.search-box input:focus{outline:2px solid var(--blue-600);border-color:var(--blue-600)}
+.legend{display:flex;gap:14px;font-size:.82rem;color:var(--muted);flex-wrap:wrap}
+.legend i{width:12px;height:12px;border-radius:50%;display:inline-block;margin-right:5px;vertical-align:-1px}
+.area-panel{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;min-height:200px;font-size:.92rem}
+.area-panel h3{color:var(--blue-900);margin-bottom:6px}
+.status-pill{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:.85rem;padding:5px 12px;border-radius:999px;margin:6px 0}
+.st-available{background:var(--green-50);color:var(--green-600)}
+.st-unstable{background:var(--amber-50);color:var(--amber-600)}
+.st-outage{background:var(--red-50);color:var(--red-600)}
+.st-available i,.st-unstable i,.st-outage i{width:9px;height:9px;border-radius:50%;display:inline-block}
+.st-available i{background:var(--green-600)} .st-unstable i{background:#e67e22} .st-outage i{background:var(--red-600)}
+.area-meta{margin-top:8px;color:var(--muted);font-size:.84rem;display:flex;flex-direction:column;gap:4px}
+.areas-table{width:100%;border-collapse:collapse;background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);font-size:.9rem}
+.areas-table th{background:var(--blue-800);color:#fff;text-align:left;padding:10px 14px;font-size:.8rem;text-transform:uppercase;letter-spacing:.5px}
+.areas-table td{padding:10px 14px;border-top:1px solid var(--line)}
+.areas-table tr:hover td{background:var(--blue-50)}
+.clickable{cursor:pointer}
+
+/* ---------- announcements ---------- */
+.ann{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:16px;border-left:6px solid var(--blue-600);overflow:hidden}
+.ann.critical{border-left-color:var(--red-600)}
+.ann.high{border-left-color:#e67e22}
+.ann.medium{border-left-color:#f1c40f}
+.ann.info{border-left-color:var(--blue-600)}
+.ann-head{display:flex;justify-content:space-between;gap:10px;padding:14px 18px 0;flex-wrap:wrap;align-items:center}
+.ann h3{color:var(--blue-900);font-size:1.05rem}
+.tag{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;border-radius:999px;padding:4px 11px}
+.tag.critical{background:var(--red-600);color:#fff}
+.tag.high{background:#e67e22;color:#fff}
+.tag.medium{background:#f1c40f;color:#5c4a00}
+.tag.info{background:var(--blue-100);color:var(--blue-700)}
+.ann-body{padding:8px 18px 14px;color:#33424f;font-size:.93rem}
+.ann-body .loc{margin-top:8px;font-size:.84rem;color:var(--muted)}
+.ann-body .instr{margin-top:10px;background:var(--blue-50);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:.88rem}
+.ann-body .src{margin-top:8px;font-size:.75rem;color:var(--muted)}
+
+/* ---------- forms ---------- */
+.form-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px;max-width:760px;margin:0 auto}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.form-field.full{grid-column:1/-1}
+.form-field label{font-weight:700;font-size:.87rem;color:var(--blue-900)}
+.form-field label span{color:var(--red-600)}
+.form-field input,.form-field select,.form-field textarea{padding:11px 13px;border:1.5px solid var(--line);border-radius:8px;font-size:.95rem;font-family:inherit;background:#fff}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{outline:2px solid var(--blue-600);border-color:var(--blue-600)}
+.form-field .hint{font-size:.76rem;color:var(--muted)}
+.err{color:var(--red-600);font-size:.82rem;font-weight:600;min-height:1em}
+.form-msg{border-radius:8px;padding:14px 16px;margin-bottom:18px;font-size:.92rem;display:none}
+.form-msg.ok{background:var(--green-50);border:1px solid #b7dfc1;color:#155731;display:block}
+.form-msg.bad{background:var(--red-50);border:1px solid #f2b8b5;color:#8f2019;display:block}
+.ref-box{background:var(--blue-50);border:1.5px dashed var(--blue-600);border-radius:8px;padding:14px;margin:12px 0;font-size:1rem}
+.ref-box b{font-family:Consolas,monospace;font-size:1.25rem;letter-spacing:1px;color:var(--blue-800)}
+.track-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;margin-top:22px}
+.status-steps{display:flex;gap:0;margin:16px 0 6px;flex-wrap:wrap}
+.step{flex:1;min-width:120px;text-align:center;position:relative;padding-top:22px;font-size:.8rem;font-weight:700;color:#9aa9b6}
+.step::before{content:"";width:16px;height:16px;border-radius:50%;background:#cfd8e0;position:absolute;top:0;left:50%;transform:translateX(-50%);border:3px solid #fff;box-shadow:0 0 0 1px #cfd8e0}
+.step::after{content:"";position:absolute;top:7px;left:calc(50% + 12px);width:calc(100% - 24px);height:3px;background:#e2e8ee}
+.step:last-child::after{display:none}
+.step.done{color:var(--green-600)} .step.done::before{background:var(--green-600);box-shadow:0 0 0 1px var(--green-600)}
+.step.done::after{background:var(--green-600)}
+.timeline{margin-top:10px;font-size:.86rem;color:var(--muted)}
+.timeline li{margin:6px 0 6px 18px}
+
+/* ---------- safety ---------- */
+.safety-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.safety-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;border-top:4px solid var(--blue-600)}
+.safety-card h3{color:var(--blue-900);font-size:1.1rem;display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.safety-card .ico{font-size:1.6rem}
+.safety-card ol{margin-left:20px;display:flex;flex-direction:column;gap:8px;font-size:.93rem}
+.helpline-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.helpline{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.helpline b{font-size:1.3rem;color:var(--red-600);font-family:Consolas,monospace}
+.helpline span{font-size:.88rem;color:var(--ink);font-weight:600}
+
+/* ---------- chatbot ---------- */
+.chat-fab{position:fixed;right:22px;bottom:22px;z-index:1500;width:60px;height:60px;border-radius:50%;background:var(--blue-700);color:#fff;border:none;font-size:1.5rem;cursor:pointer;box-shadow:0 6px 20px rgba(11,37,69,.4)}
+.chat-fab:hover{background:var(--blue-800)}
+.chat-panel{position:fixed;right:22px;bottom:94px;z-index:1500;width:380px;max-width:calc(100vw - 32px);height:540px;max-height:calc(100vh - 130px);background:var(--card);border-radius:14px;box-shadow:0 12px 40px rgba(11,37,69,.35);display:none;flex-direction:column;overflow:hidden;border:1px solid var(--line)}
+.chat-panel.open{display:flex}
+.chat-head{background:var(--blue-800);color:#fff;padding:13px 16px;display:flex;justify-content:space-between;align-items:center}
+.chat-head b{font-size:.98rem}
+.chat-head small{display:block;font-weight:400;font-size:.72rem;color:#bcd2ec}
+.chat-close{background:none;border:none;color:#fff;font-size:1.2rem;cursor:pointer}
+.chat-body{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;background:var(--blue-50)}
+.msg{max-width:86%;padding:10px 13px;border-radius:12px;font-size:.88rem;white-space:pre-wrap}
+.msg.bot{background:#fff;border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
+.msg.user{background:var(--blue-700);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 8px}
+.chip{font-size:.75rem;border:1.5px solid var(--blue-600);color:var(--blue-700);background:#fff;border-radius:999px;padding:5px 11px;cursor:pointer;font-weight:600}
+.chip:hover{background:var(--blue-100)}
+.chat-input{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line);background:#fff}
+.chat-input input{flex:1;padding:10px 12px;border:1.5px solid var(--line);border-radius:8px;font-size:.9rem}
+.chat-input button{background:var(--blue-700);color:#fff;border:none;border-radius:8px;padding:0 16px;font-size:1rem;cursor:pointer}
+.chat-note{font-size:.68rem;color:var(--muted);text-align:center;padding:0 10px 8px;background:#fff}
+
+/* ---------- footer ---------- */
+footer{background:var(--blue-900);color:#b9cbe2;margin-top:40px;font-size:.88rem}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:26px;padding:36px 0 26px}
+.foot-grid h4{color:#fff;font-size:.95rem;margin-bottom:12px}
+.foot-grid ul{list-style:none}
+.foot-grid li{margin:7px 0}
+.foot-grid a{color:#b9cbe2;text-decoration:none}
+.foot-grid a:hover{color:#fff;text-decoration:underline}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.15);padding:14px 0;font-size:.78rem;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.flag-bar{height:4px;background:linear-gradient(90deg,var(--saffron) 0%,var(--saffron) 33%,#fff 33%,#fff 66%,#1e7e34 66%,#1e7e34 100%)}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .map-wrap{grid-template-columns:1fr}
+  #map{height:400px}
+  .safety-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .nav-burger{display:block;margin-left:auto}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--card);flex-direction:column;align-items:stretch;padding:10px 14px;box-shadow:0 10px 20px rgba(11,37,69,.15);border-top:1px solid var(--line)}
+  .nav-links.open{display:flex}
+  .form-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .hero{padding:40px 0 56px}
+  .metrics{grid-template-columns:1fr 1fr;gap:10px;margin-top:-30px}
+  .chat-panel{right:12px;left:12px;width:auto}
+}
+@media (max-width:480px){ .metrics{grid-template-columns:1fr} }
+.hidden{display:none!important}
+</style><script>/* ResQGrid Public Portal - frontend logic */
+'use strict';
+
+const API = ''; // same origin
+let AREAS = [];
+let markersById = {};
+let map, markerLayer;
+
+/* ---------------- Router ---------------- */
+const PAGES = ['home', 'status', 'alerts', 'complaint', 'safety'];
+function showPage(page) {
+  if (!PAGES.includes(page)) page = 'home';
+  PAGES.forEach(p => document.getElementById('page-' + p).classList.toggle('hidden', p !== page));
+  document.querySelectorAll('.nav-links a[data-nav]').forEach(a => a.classList.toggle('active', a.dataset.nav === page));
+  document.getElementById('navLinks').classList.remove('open');
+  window.scrollTo({ top: 0 });
+  if (page === 'status') setTimeout(() => map && map.invalidateSize(), 60);
+}
+document.addEventListener('click', e => {
+  const nav = e.target.closest('[data-nav]');
+  if (nav) { e.preventDefault(); location.hash = nav.dataset.nav; }
+});
+window.addEventListener('hashchange', () => showPage(location.hash.replace('#', '') || 'home'));
+
+/* ---------------- Helpers ---------------- */
+const fmtIST = iso => iso ? new Date(iso).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', dateStyle: 'medium', timeStyle: 'short' }) + ' IST' : '—';
+function esc(s) { return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
+
+const STATUS_META = {
+  available: { label: 'Electricity Available', color: '#1e7e34' },
+  unstable:  { label: 'Power Supply Unstable', color: '#e67e22' },
+  outage:    { label: 'Power Outage', color: '#c0392b' }
+};
+
+/* ---------------- Navbar burger ---------------- */
+document.getElementById('navBurger').addEventListener('click', () =>
+  document.getElementById('navLinks').classList.toggle('open'));
+
+/* ---------------- Data loading (API with baked-data fallback for static preview) ---------------- */
+async function getJSON(path, bakedKey) {
+  try {
+    const r = await fetch(API + path);
+    if (!r.ok) throw new Error('bad status');
+    return await r.json();
+  } catch (e) {
+    if (window.__BAKED && window.__BAKED[bakedKey]) return window.__BAKED[bakedKey];
+    throw e;
+  }
+}
+
+async function loadSummary() {
+  try {
+    const d = await getJSON('/api/summary', 'summary');
+    document.getElementById('mTotal').textContent = d.total_available_mw.toLocaleString('en-IN') + ' MW';
+    document.getElementById('mDemand').textContent = d.current_demand_mw.toLocaleString('en-IN') + ' MW';
+    document.getElementById('mOutages').textContent = `${d.outage_areas} of ${d.total_areas}`;
+    document.getElementById('mAlerts').textContent = d.active_alerts;
+    // emergency banner
+    const anns = await getJSON('/api/announcements', 'announcements');
+    const critical = anns.announcements.filter(a => a.priority === 'critical' || a.priority === 'high');
+    if (critical.length) {
+      const b = document.getElementById('emergencyBanner');
+      document.getElementById('emergencyBannerText').textContent = `⚠ Active emergency announcement: ${critical[0].title}`;
+      b.classList.remove('hidden');
+    }
+    // home announcement teasers
+    const home = document.getElementById('homeAnnouncements');
+    home.innerHTML = anns.announcements.slice(0, 2).map(annCard).join('');
+    document.getElementById('announcementsList').innerHTML = anns.announcements.map(annCard).join('') ||
+      '<p style="color:var(--muted)">No announcements right now.</p>';
+  } catch (e) {
+    document.getElementById('mTotal').textContent = 'Unavailable';
+  }
+}
+
+function annCard(a) {
+  return `<article class="ann ${esc(a.priority)}">
+    <div class="ann-head">
+      <h3>${esc(a.title)}</h3>
+      <span class="tag ${esc(a.priority)}">${esc(a.priority)}</span>
+    </div>
+    <div class="ann-body">
+      ${esc(a.body)}
+      <div class="loc">📍 <b>Affected locations:</b> ${esc(a.affected_locations)} &nbsp;·&nbsp; 🕐 ${fmtIST(a.published_at)}</div>
+      ${a.instructions ? `<div class="instr"><b>Instructions for citizens:</b><br>${esc(a.instructions)}</div>` : ''}
+      <div class="src">Source: ${esc(a.source)}</div>
+    </div>
+  </article>`;
+}
+
+/* ---------------- Map + areas ---------------- */
+function initMap() {
+  map = L.map('map', { scrollWheelZoom: true }).setView([13.03, 80.22], 11);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18, attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+  markerLayer = L.layerGroup().addTo(map);
+}
+
+function markerIcon(status) {
+  const c = { available: '#1e7e34', unstable: '#e67e22', outage: '#c0392b' }[status];
+  return L.divIcon({
+    className: '',
+    html: `<span style="display:block;width:18px;height:18px;border-radius:50%;background:${c};border:3px solid #fff;box-shadow:0 1px 6px rgba(0,0,0,.5)"></span>`,
+    iconSize: [18, 18], iconAnchor: [9, 9]
+  });
+}
+
+function renderMarkers(filter = '') {
+  markerLayer.clearLayers();
+  const f = filter.trim().toLowerCase();
+  AREAS.filter(a => !f || a.name.toLowerCase().includes(f) || a.district.toLowerCase().includes(f))
+    .forEach(a => {
+      const m = L.marker([a.lat, a.lng], { icon: markerIcon(a.status), title: a.name })
+        .bindTooltip(`${a.name} — ${STATUS_META[a.status].label}`)
+        .on('click', () => selectArea(a.id));
+      m.addTo(markerLayer);
+      markersById[a.id] = m;
+    });
+}
+
+function selectArea(id) {
+  const a = AREAS.find(x => x.id === id); if (!a) return;
+  map.setView([a.lat, a.lng], 13, { animate: true });
+  if (markersById[id]) markersById[id].openTooltip();
+  const meta = STATUS_META[a.status];
+  document.getElementById('areaPanel').innerHTML = `
+    <h3>${esc(a.name)}</h3>
+    <div>${esc(a.district)} district</div>
+    <span class="status-pill st-${a.status}"><i></i>${meta.label}</span>
+    ${a.notes ? `<p style="margin-top:6px">${esc(a.notes)}</p>` : ''}
+    <div class="area-meta">
+      <span>⚡ Availability indicator: <b>${a.availability_pct}%</b> (demo)</span>
+      <span>🕐 Estimated restoration: <b>${a.estimated_restore ? fmtIST(a.estimated_restore) : 'No verified time published yet'}</b></span>
+      <span>🔁 Last updated: ${fmtIST(a.last_updated)}</span>
+      ${a.status === 'outage' ? '<span style="color:var(--red-600);font-weight:700">Report it: use Register Complaint or call 1912.</span>' : ''}
+    </div>`;
+}
+
+function renderTable() {
+  const tb = document.querySelector('#areasTable tbody');
+  tb.innerHTML = AREAS.map(a => `
+    <tr class="clickable" data-id="${a.id}">
+      <td><b>${esc(a.name)}</b></td><td>${esc(a.district)}</td>
+      <td><span class="status-pill st-${a.status}"><i></i>${STATUS_META[a.status].label}</span></td>
+      <td>${a.availability_pct}%</td>
+      <td>${a.estimated_restore ? fmtIST(a.estimated_restore) : '—'}</td>
+      <td>${fmtIST(a.last_updated)}</td>
+    </tr>`).join('');
+  tb.querySelectorAll('tr').forEach(tr => tr.addEventListener('click', () => selectArea(+tr.dataset.id)));
+}
+
+async function loadAreas() {
+  const d = await getJSON('/api/areas', 'areas');
+  AREAS = d.areas;
+  renderMarkers(); renderTable();
+  document.getElementById('areaSearch').addEventListener('input', e => {
+    renderMarkers(e.target.value);
+    const f = e.target.value.trim().toLowerCase();
+    const match = AREAS.find(a => a.name.toLowerCase() === f);
+    if (match) selectArea(match.id);
+  });
+}
+
+/* ---------------- Complaint form ---------------- */
+const form = document.getElementById('complaintForm');
+const cMsg = document.getElementById('cMsg');
+function setFieldErr(id, msg) { document.getElementById(id).textContent = msg || ''; }
+
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  cMsg.className = 'form-msg'; cMsg.textContent = '';
+  ['eContact', 'eDistrict', 'eLocality', 'eCategory', 'eDesc'].forEach(id => setFieldErr(id, ''));
+  const v = id => document.getElementById(id).value.trim();
+  let ok = true;
+  const contact = v('cContact');
+  if (!(/^(\+91[- ]?)?[6-9]\d{9}$/.test(contact) || /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(contact)))
+    { setFieldErr('eContact', 'Enter a valid 10-digit Indian mobile number or an email address.'); ok = false; }
+  if (!v('cDistrict')) { setFieldErr('eDistrict', 'Select your district.'); ok = false; }
+  if (!v('cLocality')) { setFieldErr('eLocality', 'Enter your locality / area.'); ok = false; }
+  if (!v('cCategory')) { setFieldErr('eCategory', 'Select a complaint category.'); ok = false; }
+  if (v('cDesc').length < 10) { setFieldErr('eDesc', 'Please describe the issue (at least 10 characters).'); ok = false; }
+  if (!ok) { cMsg.className = 'form-msg bad'; cMsg.textContent = 'Please correct the highlighted fields and try again.'; return; }
+
+  const btn = document.getElementById('cSubmit');
+  btn.disabled = true; btn.textContent = 'Submitting…';
+  try {
+    const fd = new FormData();
+    ['cName', 'cContact', 'cDistrict', 'cLocality', 'cCategory', 'cDesc', 'cLocation'].forEach(k => fd.append(k.slice(1).toLowerCase(), v(k)));
+    const img = document.getElementById('cImage').files[0];
+    if (img) fd.append('image', img);
+    const r = await fetch(API + '/api/complaints', { method: 'POST', body: fd });
+    const d = await r.json();
+    if (!r.ok || !d.ok) throw new Error(d.error || 'Submission failed. Please try again.');
+    form.reset();
+    cMsg.className = 'form-msg ok';
+    cMsg.innerHTML = `✅ <b>Complaint registered successfully.</b> Your reference number is: <b style="font-family:monospace;font-size:1.1rem">${esc(d.reference)}</b><br>Keep it safe to track your complaint below. Status: <b>${esc(d.status)}</b>`;
+    document.getElementById('trackRef').value = d.reference;
+  } catch (err) {
+    cMsg.className = 'form-msg bad'; cMsg.textContent = err.message;
+  } finally {
+    btn.disabled = false; btn.textContent = 'Submit complaint';
+  }
+});
+
+/* ---------------- Tracking ---------------- */
+document.getElementById('trackBtn').addEventListener('click', track);
+document.getElementById('trackRef').addEventListener('keydown', e => { if (e.key === 'Enter') track(); });
+async function track() {
+  const ref = document.getElementById('trackRef').value.trim().toUpperCase();
+  const out = document.getElementById('trackResult'), err = document.getElementById('trackErr');
+  err.textContent = ''; out.innerHTML = '';
+  if (!/^RG[0-9A-Z]+$/.test(ref)) { err.textContent = 'Enter a valid reference number (it starts with RG).'; return; }
+  err.textContent = 'Checking…';
+  try {
+    const r = await fetch(API + '/api/complaints/track/' + encodeURIComponent(ref));
+    const d = await r.json();
+    err.textContent = '';
+    if (!r.ok || !d.ok) { err.textContent = d.error || 'Not found.'; return; }
+    const c = d.complaint;
+    const steps = ['Submitted', 'Under Review', 'In Progress', 'Resolved'];
+    const cur = steps.indexOf(c.status);
+    out.innerHTML = `
+      <div class="status-steps">${steps.map((s, i) => `<div class="step ${i <= cur ? 'done' : ''}">${s}</div>`).join('')}</div>
+      <p style="font-size:.9rem">Reference <b>${esc(c.ref)}</b> · ${esc(c.category)} · ${esc(c.locality)}, ${esc(c.district)} district<br>
+      Last updated: ${fmtIST(c.updated_at)}</p>
+      <ul class="timeline">${d.updates.map(u => `<li><b>${esc(u.status)}</b> — ${esc(u.note || '')} <small>(${fmtIST(u.at)})</small></li>`).join('')}</ul>
+      <p style="font-size:.78rem;color:var(--muted)">Tracking shows status information only. Personal details are never displayed publicly.</p>`;
+  } catch {
+    err.textContent = 'Could not reach the server. Please try again.';
+  }
+}
+
+/* ---------------- Safety page ---------------- */
+const HELPLINES = [
+  ['National Emergency Helpline (Police · Fire · Ambulance)', '112'],
+  ['Electricity / Power Supply Helpline', '1912'],
+  ['Relief Commissioner for Natural Calamities', '1070'],
+  ['District Disaster Control Room', '1077'],
+  ['NDRF Helpline', '+91-9711077372'],
+  ['Police Control Room', '100'],
+  ['Fire & Rescue', '101'],
+  ['Ambulance', '102']
+];
+const SAFETY_CARDS = [
+  { ico: '🌊', title: 'Electrical Safety During Floods', pts: [
+    'Stay away from substations, transformer boxes, street-light poles and meter boards in flooded areas.',
+    'If water enters your home, switch OFF the mains first — only if it is safe to reach.',
+    'Never touch switches or appliances with wet hands or while standing in water.',
+    'Treat every fallen wire as LIVE. Keep at least 10 metres away.',
+    'Do not wade or drive through water near electric poles.',
+    'Report sparking poles or submerged transformers: call 1912, or 112 in an emergency.',
+    'After floods, get wiring inspected by a licensed electrician before switching power back on.'
+  ]},
+  { ico: '🔌', title: 'Safety During Power Outages', pts: [
+    'Use torches, not candles — candles cause fires.',
+    'Keep refrigerator/freezer doors closed; food stays safe up to 4 hours.',
+    'Unplug TVs, computers and refrigerators to protect them from surges when power returns.',
+    'Never run generators indoors or on balconies — exhaust fumes are deadly.',
+    'Drive carefully: traffic signals may not be working.',
+    'Check on elderly neighbours and people using powered medical equipment.'
+  ]},
+  { ico: '⚠️', title: 'When Electrical Infrastructure Is Damaged', pts: [
+    'Keep at least 10 metres from fallen poles, wires or damaged transformers.',
+    'Never try to move a wire yourself — even with a stick.',
+    'If someone is in contact with a live wire, do NOT touch them. Call 112 and 1912.',
+    'If your vehicle touches a fallen wire: stay inside and call for help.',
+    'Warn others and block access until officials arrive.',
+    'Report damage on the Register Complaint page with a photo from a safe distance.'
+  ]},
+  { ico: '🎒', title: 'Emergency Preparedness Guidelines', pts: [
+    'Keep a 72-hour kit: torch, batteries, power bank, water, dry food, first-aid, medicines.',
+    'Save these numbers: 112 (emergency), 1912 (electricity), 1070/1077 (disaster management).',
+    'Know where your home\'s main electricity switch is located.',
+    'Charge phones and power banks whenever a cyclone or flood warning is issued.',
+    'Identify the nearest relief shelter and the safest route to higher ground.',
+    'Trust only verified announcements on this portal and official government channels.'
+  ]}
+];
+document.getElementById('safetyGrid').innerHTML = SAFETY_CARDS.map(c => `
+  <div class="safety-card"><h3><span class="ico">${c.ico}</span>${c.title}</h3>
+  <ol>${c.pts.map(p => `<li>${esc(p)}</li>`).join('')}</ol></div>`).join('');
+document.getElementById('helplineGrid').innerHTML = HELPLINES.map(([n, num]) =>
+  `<div class="helpline"><span>${esc(n)}</span><b>${esc(num)}</b></div>`).join('');
+
+/* Chat is supplied by the shared ResQGrid assistant widget. *//* ---------------- Boot ---------------- */
+initMap();
+showPage(window.__FORCE_PAGE || location.hash.replace('#', '') || 'home');
+loadSummary();
+loadAreas();
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+<script>
+(()=>{const API='http://127.0.0.1:5177/api/auth',KEY='resqgrid.session',LOGIN='./resqgrid-auth.html#signin';const status=document.getElementById('session-check');function token(){try{const s=JSON.parse(localStorage.getItem(KEY)||'null');if(s?.token)return s.token;}catch{localStorage.removeItem(KEY)}const t=window.name.startsWith('resqgrid-session:')?window.name.slice('resqgrid-session:'.length):'';if(t)localStorage.setItem(KEY,JSON.stringify({token:t}));return t}function signout(){const t=token();try{if(t)fetch(API+'/signout',{method:'POST',headers:{Authorization:'Bearer '+t},keepalive:true})}catch{}localStorage.removeItem(KEY);window.name='';location.replace(LOGIN)}document.getElementById('signOutLink')?.addEventListener('click',e=>{e.preventDefault();signout()});async function start(){const t=token();if(!t){location.replace(LOGIN);return}try{const r=await fetch(API+'/session',{headers:{Authorization:'Bearer '+t},signal:AbortSignal.timeout(7000)});const d=await r.json();if(!r.ok){localStorage.removeItem(KEY);window.name='';location.replace(LOGIN);return}if(String(d.user?.role||'').startsWith('Government Officer')){location.replace('http://127.0.0.1:5174/');return}document.body.classList.add('session-verified');status.remove()}catch{document.body.classList.add('session-error');status.textContent='Could not verify your session. Return to Public Sign In.';status.style.cursor='pointer';status.addEventListener('click',()=>location.replace(LOGIN),{once:true})}}void start()})();
+</script>
+<script src="/chat-widget.js"></script>
+</body>
+</html>
